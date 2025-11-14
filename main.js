@@ -59,4 +59,31 @@ function caesarCipher(word, shift) {
     return cipherWord;
 }
 
-export {capitalize, reverse, calculator, caesarCipher}
+function analyzeArray(theArray) {
+    const theObject = {};
+    let theAverage = 0;
+    let theMin = theArray[0];
+    let theMax = theArray[0];
+    let theLength = 0;
+
+    for(let i = 0; i < theArray.length; i++) {
+        theAverage += theArray[i];
+        if(theMin > theArray[i]) {
+            theMin = theArray[i];
+        }
+        if(theMax < theArray[i]) {
+            theMax = theArray[i];
+        }
+    }
+
+    theAverage = theAverage / theArray.length;
+
+    theObject.average = theAverage;
+    theObject.min = theMin;
+    theObject.max = theMax;
+    theObject.length = theArray.length;
+
+    return theObject;
+}
+
+export {capitalize, reverse, calculator, caesarCipher, analyzeArray}

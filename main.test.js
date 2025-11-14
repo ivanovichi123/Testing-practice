@@ -1,4 +1,4 @@
-import { capitalize, reverse, calculator, caesarCipher } from "./main";
+import { capitalize, reverse, calculator, caesarCipher, analyzeArray } from "./main";
 
 test("Capitalize the first letter in ivan", () => {
     const word = "ivan";
@@ -89,4 +89,12 @@ test("Cipher with case preservation of HeLLo shift 3 is KhOOr", () => {
 
 test("Cipher with test punctuation of Hello, World! shift 3 is Khoor, Zruog!", () =>{
     expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+test("Analyze the array [1,8,3,4,2,6], avg: 4, min: 1, max: 8, length: 6", () => {
+    expect(analyzeArray([1,8,3,4,2,6])).toEqual({average: 4,min: 1, max: 8, length: 6});
+});
+
+test("Analyze the array [1,2,3,4,5], avg: 3, min: 1, max: 5, length: 5", () => {
+    expect(analyzeArray([1,2,3,4,5])).toEqual({average: 3,min: 1, max: 5, length: 5});
 });
