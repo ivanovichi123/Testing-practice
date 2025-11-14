@@ -1,5 +1,7 @@
 import { capitalize, reverse, calculator, caesarCipher, analyzeArray } from "./main";
 
+//File to make the test to check if the functions work correctly
+
 test("Capitalize the first letter in ivan", () => {
     const word = "ivan";
     expect(capitalize(word)).toBe("Ivan");
@@ -81,6 +83,10 @@ test("Calculator multiply 7 * 2 is equal to 14", () => {
 
 test("Cipher of xyz with shift 3 is abc", () => {
     expect(caesarCipher("xyz",3)).toBe("abc");
+});
+
+test("Cipher of xyz with shift -3 is uvw", () => {
+    expect(caesarCipher("xyz",-3)).toBe("uvw");
 });
 
 test("Cipher with case preservation of HeLLo shift 3 is KhOOr", () => {
